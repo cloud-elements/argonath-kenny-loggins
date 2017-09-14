@@ -1,5 +1,5 @@
 {
-  "name": "argonath-kenny-loggins",
+  "name": "@cloudelements/argonath-kenny-loggins",
   "version": "0.0.0",
   "description": "A Kong plugin to handle Cloud Elements audit logging",
   "main": "index.js",
