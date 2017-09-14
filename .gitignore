@@ -1,0 +1,5 @@
+*.src.rock
+*.tar.gz
+*.zip
+luac.out
+.DS_Store

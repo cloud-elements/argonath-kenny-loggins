@@ -1,0 +1,20 @@
+{
+  "name": "argonath-kenny-loggins",
+  "version": "0.0.0",
+  "description": "A Kong plugin to handle Cloud Elements audit logging",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "install": "luarocks make kong-plugin-kenny-loggins-0.0.0.rockspec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloud-elements/argonath-kenny-loggins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cloud-elements/argonath-kenny-loggins/issues"
+  },
+  "homepage": "https://github.com/cloud-elements/argonath-kenny-loggins#readme"
+}
