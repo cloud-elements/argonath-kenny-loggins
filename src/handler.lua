@@ -1,7 +1,7 @@
 local lsyslog = require "lsyslog"
 local cjson = require "cjson"
 local BasePlugin = require "kong.plugins.base_plugin"
-local basic_serializer = require "kong.plugins.log-serializers.basic"
+local serializer = require "kong.plugins.argonath-kenny-loggins.serializer"
 local ngx_log = ngx.log
 local ngx_timer_at = ngx.timer.at
 local l_open = lsyslog.open
@@ -52,7 +52,7 @@ end
 function ArgonathKennyLogginsHandler:log(conf)
   ArgonathKennyLogginsHandler.super.log(self)
 
-  local message = basic_serializer.serialize(ngx)
+  local message = serializer.serialize(ngx)
   local ok, err = ngx_timer_at(0, log, conf, message)
   if not ok then
     ngx_log(ngx.ERR, "failed to create timer: ", err)
