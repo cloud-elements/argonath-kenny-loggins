@@ -72,6 +72,8 @@ describe("#ci Plugin: argonath-kenny-loggins (log)", function()
 
   local function do_test(host, expecting_same)
     local uuid = utils.random_string()
+    local auth = "abc"
+    local cookie = "xyz"
 
     local response = assert(client:send {
       method = "GET",
@@ -79,9 +81,13 @@ describe("#ci Plugin: argonath-kenny-loggins (log)", function()
       headers = {
         host = host,
         sys_log_uuid = uuid,
+        authorization = auth,
+        cookie = cookie
       }
     })
     assert.res_status(200, response)
+    assert.falsy(json.request.headers["authorization"])
+    assert.fasly(json.request.headers["cookie"])
 
     if platform == "Darwin" then
       local _, _, stdout = assert(helpers.execute("argonath-kenny-loggins -k Sender kong | tail -1"))

@@ -1,7 +1,7 @@
 local lsyslog = require "lsyslog"
 local cjson = require "cjson"
 local BasePlugin = require "kong.plugins.base_plugin"
-local basic_serializer = require "kong.plugins.log-serializers.basic"
+local serializer = require "kong.plugins.argonath-kenny-loggins.serializer"
 local ngx_log = ngx.log
 local ngx_timer_at = ngx.timer.at
 local l_open = lsyslog.open
@@ -9,9 +9,9 @@ local l_log = lsyslog.log
 local string_upper = string.upper
 
 
-local SysLogHandler = BasePlugin:extend()
+local ArgonathKennyLogginsHandler = BasePlugin:extend()
 
-SysLogHandler.PRIORITY = 1
+ArgonathKennyLogginsHandler.PRIORITY = 1
 
 local SENDER_NAME = "kong"
 
@@ -45,18 +45,18 @@ local function log(premature, conf, message)
   end
 end
 
-function SysLogHandler:new()
-  SysLogHandler.super.new(self, "argonath-kenny-loggins")
+function ArgonathKennyLogginsHandler:new()
+  ArgonathKennyLogginsHandler.super.new(self, "argonath-kenny-loggins")
 end
 
-function SysLogHandler:log(conf)
-  SysLogHandler.super.log(self)
+function ArgonathKennyLogginsHandler:log(conf)
+  ArgonathKennyLogginsHandler.super.log(self)
 
-  local message = basic_serializer.serialize(ngx)
+  local message = serializer.serialize(ngx)
   local ok, err = ngx_timer_at(0, log, conf, message)
   if not ok then
     ngx_log(ngx.ERR, "failed to create timer: ", err)
   end
 end
 
-return SysLogHandler
+return ArgonathKennyLogginsHandler

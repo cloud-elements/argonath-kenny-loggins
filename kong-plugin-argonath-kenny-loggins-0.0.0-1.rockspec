@@ -14,6 +14,7 @@ build = {
    type = "builtin",
    modules = {
       ["kong.plugins.argonath-kenny-loggins.handler"] = "src/handler.lua",
-      ["kong.plugins.argonath-kenny-loggins.schema"] = "src/schema.lua"
+      ["kong.plugins.argonath-kenny-loggins.schema"] = "src/schema.lua",
+      ["kong.plugins.argonath-kenny-loggins.serializer"] = "src/serializer.lua"
    }
 }
