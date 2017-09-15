@@ -12,6 +12,10 @@ function _M.serialize(ngx)
       consumer_id = ngx.ctx.authenticated_credential.consumer_id
     }
   end
+
+  local headers = ngx.req.get_headers()
+  headers["authorization"] = nil
+  headers["cookie"] = nil
   
   return {
     request = {
@@ -19,7 +23,7 @@ function _M.serialize(ngx)
       request_uri = ngx.var.scheme.."://"..ngx.var.host..":"..ngx.var.server_port..ngx.var.request_uri,
       querystring = ngx.req.get_uri_args(), -- parameters, as a table
       method = ngx.req.get_method(), -- http method
-      headers = ngx.req.get_headers(),
+      headers = headers,
       size = ngx.var.request_length
     },
     response = {
