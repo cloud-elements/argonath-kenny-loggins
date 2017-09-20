@@ -3,3 +3,4 @@
 *.zip
 luac.out
 .DS_Store
+*.log

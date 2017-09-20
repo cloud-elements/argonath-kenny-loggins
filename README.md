@@ -1,6 +1,6 @@
 # argonath-kenny-loggins
 ## A Kong plugin to handle Cloud Elements audit logging
-[![version](http://img.shields.io/badge/version-v0.0.0-blue.svg)](#)
+[![version](http://img.shields.io/badge/version-v0.0.1-blue.svg)](#)
 [![versioning](http://img.shields.io/badge/versioning-semver-blue.svg)](http://semver.org/)
 [![branching](http://img.shields.io/badge/branching-github%20flow-blue.svg)](https://guides.github.com/introduction/flow/)
 
@@ -19,7 +19,7 @@ within `kong.conf` or export the `KONG_CUSTOM_PLUGINS` environment variable. Fin
 ### Via `luarocks`:
 
 ```bash
-$ luarocks make kong-plugin-argonath-kenny-loggins-0.0.0-1.rockspec
+$ luarocks make kong-plugin-argonath-kenny-loggins-0.0.1-1.rockspec
 ```
 
 ### Via `npm`:
