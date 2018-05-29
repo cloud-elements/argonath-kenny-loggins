@@ -19,7 +19,7 @@ within `kong.conf` or export the `KONG_CUSTOM_PLUGINS` environment variable. Fin
 ### Via `luarocks`:
 
 ```bash
-$ luarocks make kong-plugin-argonath-kenny-loggins-0.0.2-1.rockspec
+$ luarocks make kong-plugin-argonath-kenny-loggins-0.1.0-1.rockspec
 ```
 
 ### Via `npm`:
@@ -49,14 +49,5 @@ $ KONG_PLUGIN_PATH=../argonath-kenny-loggins vagrant up
 $ vagrant ssh
 ```
 
-```bash
-# on Kong development box:
-# install plugin
-$ cd /plugin
-$ make
-# install Kong
-$ cd /kong
-$ make dev
-# run tests
-$ KONG_CUSTOM_PLUGINS=argonath-kenny-loggins bin/busted -v /plugin/test
-```
+
+To test this, you must build the luarock into an argonath container and test in docker-compose.  Both of these are found in the [argonath repo](https://github.com/cloud-elements/argonath)
