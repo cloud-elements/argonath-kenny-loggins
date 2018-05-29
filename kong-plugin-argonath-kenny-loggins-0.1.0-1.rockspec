@@ -1,8 +1,8 @@
 package = "kong-plugin-argonath-kenny-loggins"
-version = "0.0.4-1"
+version = "0.1.0-1"
 source = {
    url = "git://github.com/cloud-elements/argonath-kenny-loggins.git",
-   tag = "v0.0.4"
+   tag = "v0.1.0"
 }
 description = {
    summary = "A Kong plugin to handle Cloud Elements audit logging"
